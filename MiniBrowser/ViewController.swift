@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func bookMarkAction(sender: AnyObject) {
         let bookMarkUrl = bookMarkSegmentedControl.titleForSegmentAtIndex(bookMarkSegmentedControl.selectedSegmentIndex)
-        let urlString = "http://www.\(bookMarkUrl).com"
+        let urlString = "http://www.\(bookMarkUrl!).com"
         mainWebView.loadRequest(NSURLRequest(URL: NSURL(string: urlString)!))
     }
     
