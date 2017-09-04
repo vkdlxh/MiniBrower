@@ -28,6 +28,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="28" width="375" height="29"/>
                                 </variation>
+                                <connections>
+                                    <action selector="bookMarkAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="eLU-s8-xxM"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YZ5-rC-Ddg">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
@@ -37,20 +40,53 @@
                                     <rect key="frame" x="0.0" y="57" width="375" height="30"/>
                                 </variation>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dE4-se-JYT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="QbY-bE-1n4"/>
+                                    <barButtonItem systemItem="rewind" id="OSv-S9-rEr"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eQ9-vZ-l8K"/>
+                                    <barButtonItem systemItem="fastForward" id="BvP-Zd-fjZ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hNC-h6-9zd"/>
+                                    <barButtonItem systemItem="stop" id="eeY-bl-aCR"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ueo-Fg-dWh"/>
+                                    <barButtonItem systemItem="refresh" id="eHu-RN-Zcd"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0sS-A6-rLJ"/>
+                                </items>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                </variation>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rUc-Pd-VZb">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="87" width="375" height="536"/>
+                                </variation>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YZ5-rC-Ddg"/>
+                                <exclude reference="dE4-se-JYT"/>
+                                <exclude reference="rUc-Pd-VZb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="YZ5-rC-Ddg"/>
+                                <include reference="dE4-se-JYT"/>
+                                <include reference="rUc-Pd-VZb"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bookMarkSegmentedControl" destination="y9R-6p-ePl" id="ViW-ie-TlF"/>
+                        <outlet property="mainWebView" destination="rUc-Pd-VZb" id="BV5-lQ-bib"/>
+                        <outlet property="urlTextField" destination="YZ5-rC-Ddg" id="1qd-Q0-oz2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
