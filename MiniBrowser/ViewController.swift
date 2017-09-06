@@ -8,16 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate{
+class ViewController: UIViewController, UITextFieldDelegate, UIWebViewDelegate{
 
     @IBOutlet weak var bookMarkSegmentedControl: UISegmentedControl!
     @IBOutlet weak var urlTextField: UITextField!
     @IBOutlet weak var mainWebView: UIWebView!
+    @IBOutlet weak var spiningActivityIndicatorView: UIActivityIndicatorView!
     
     @IBAction func bookMarkAction(sender: AnyObject) {
         let bookMarkUrl = bookMarkSegmentedControl.titleForSegmentAtIndex(bookMarkSegmentedControl.selectedSegmentIndex)
         let urlString = "http://www.\(bookMarkUrl!).com"
         mainWebView.loadRequest(NSURLRequest(URL: NSURL(string: urlString)!))
+        urlTextField.text = urlString
     }
     
     // 키패드 Go를 눌렀을 때 페이지 이동 처리 기능.
@@ -37,7 +39,20 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        var urlString = "http://www.facebook.com"
+        
+        mainWebView.loadRequest(NSURLRequest(URL: NSURL(string: urlString)!))
+        urlTextField.text = urlString
+        
+    }
+    
+    // WebView가 통신 시작할 때 이벤트
+    func webViewDidStartLoad(webView: UIWebView) {
+        spiningActivityIndicatorView.startAnimating()
+    }
+    // WebView가 통신 끝낼 때 이벤트
+    func webViewDidFinishLoad(webView: UIWebView) {
+        spiningActivityIndicatorView.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {

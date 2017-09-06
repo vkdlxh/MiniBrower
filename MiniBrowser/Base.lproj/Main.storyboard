@@ -66,7 +66,17 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="87" width="375" height="536"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ZtN-rs-Mfg"/>
+                                </connections>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gbd-XF-fgd">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <color key="color" red="0.1995269810662158" green="0.39667440659482522" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="169" y="238" width="37" height="37"/>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -74,6 +84,7 @@
                                 <exclude reference="YZ5-rC-Ddg"/>
                                 <exclude reference="dE4-se-JYT"/>
                                 <exclude reference="rUc-Pd-VZb"/>
+                                <exclude reference="Gbd-XF-fgd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -81,6 +92,7 @@
                                 <include reference="YZ5-rC-Ddg"/>
                                 <include reference="dE4-se-JYT"/>
                                 <include reference="rUc-Pd-VZb"/>
+                                <include reference="Gbd-XF-fgd"/>
                             </mask>
                         </variation>
                     </view>
@@ -88,6 +100,7 @@
                     <connections>
                         <outlet property="bookMarkSegmentedControl" destination="y9R-6p-ePl" id="ViW-ie-TlF"/>
                         <outlet property="mainWebView" destination="rUc-Pd-VZb" id="BV5-lQ-bib"/>
+                        <outlet property="spiningActivityIndicatorView" destination="Gbd-XF-fgd" id="Wd3-tn-Pu5"/>
                         <outlet property="urlTextField" destination="YZ5-rC-Ddg" id="1qd-Q0-oz2"/>
                     </connections>
                 </viewController>
