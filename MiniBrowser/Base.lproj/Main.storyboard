@@ -47,13 +47,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QbY-bE-1n4"/>
-                                    <barButtonItem systemItem="rewind" id="OSv-S9-rEr"/>
+                                    <barButtonItem systemItem="rewind" id="OSv-S9-rEr">
+                                        <connections>
+                                            <action selector="goBack" destination="rUc-Pd-VZb" id="8RR-R5-NUY"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="eQ9-vZ-l8K"/>
-                                    <barButtonItem systemItem="fastForward" id="BvP-Zd-fjZ"/>
+                                    <barButtonItem systemItem="fastForward" id="BvP-Zd-fjZ">
+                                        <connections>
+                                            <action selector="goForward" destination="rUc-Pd-VZb" id="7bx-po-cBl"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hNC-h6-9zd"/>
-                                    <barButtonItem systemItem="stop" id="eeY-bl-aCR"/>
+                                    <barButtonItem systemItem="stop" id="eeY-bl-aCR">
+                                        <connections>
+                                            <action selector="stopLoading" destination="rUc-Pd-VZb" id="h3W-E4-FZQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ueo-Fg-dWh"/>
-                                    <barButtonItem systemItem="refresh" id="eHu-RN-Zcd"/>
+                                    <barButtonItem systemItem="refresh" id="eHu-RN-Zcd">
+                                        <connections>
+                                            <action selector="reload" destination="rUc-Pd-VZb" id="ZjV-1m-jYc"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0sS-A6-rLJ"/>
                                 </items>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
