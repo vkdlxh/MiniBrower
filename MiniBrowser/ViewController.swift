@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var bookMarkSegmentedControl: UISegmentedControl!
     @IBOutlet weak var urlTextField: UITextField!
@@ -18,6 +18,21 @@ class ViewController: UIViewController {
         let bookMarkUrl = bookMarkSegmentedControl.titleForSegmentAtIndex(bookMarkSegmentedControl.selectedSegmentIndex)
         let urlString = "http://www.\(bookMarkUrl!).com"
         mainWebView.loadRequest(NSURLRequest(URL: NSURL(string: urlString)!))
+    }
+    
+    // 키패드 Go를 눌렀을 때 페이지 이동 처리 기능.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        var urlString = "\(urlTextField.text!)"
+        
+        // hasPrefix : 앞 글자가 가지고 있는가
+        if !urlString.hasPrefix("http://") {
+            urlString = "http://\(urlTextField.text!)"
+        }
+        
+        mainWebView.loadRequest(NSURLRequest(URL: NSURL(string: urlString)!))
+        // 키보드가 자동으로 비활성화 되면서 내려감
+        textField.resignFirstResponder()
+        return true
     }
     
     override func viewDidLoad() {
